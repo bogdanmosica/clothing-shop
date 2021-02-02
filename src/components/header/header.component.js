@@ -8,32 +8,30 @@ import { auth } from "../../firebase/firebase.utils";
 
 import "./header.styles.scss";
 
-const Header = ({ currentUser }) => {
-	return (
-		<div className="header">
-			<Link to="/">
-				<Logo className="logo" />
+const Header = ({ currentUser }) => (
+	<div className="header">
+		<Link to="/">
+			<Logo className="logo" />
+		</Link>
+		<div className="options">
+			<Link className="option" to="/shop">
+				SHOP
 			</Link>
-			<div className="options">
-				<Link className="option" to="/shop">
-					SHOP
+			<Link className="option" to="/contact">
+				CONTACT
+			</Link>
+			{currentUser ? (
+				<div className="option" onClick={() => auth.signOut()}>
+					SIGN OUT
+				</div>
+			) : (
+				<Link className="option" to="/sign-in">
+					SIGN IN
 				</Link>
-				<Link className="option" to="/contact">
-					CONTACT
-				</Link>
-				{currentUser ? (
-					<div className="option" onClick={() => auth.signOut()}>
-						SIGN OUT
-					</div>
-				) : (
-					<Link className="option" to="/sign-in">
-						SIGN IN
-					</Link>
-				)}
-			</div>
+			)}
 		</div>
-	);
-};
+	</div>
+);
 
 const mapStateToProps = (state) => ({
 	currentUser: state.user.currentUser,
