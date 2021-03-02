@@ -17,14 +17,14 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 const Header = ({ currentUser, hidden }) => (
 	<div className="header">
-		<Link to="/clothing-shop/">
+		<Link to="/">
 			<Logo className="logo" />
 		</Link>
 		<div className="options">
-			<Link className="option" to="/clothing-shop/shop">
+			<Link className="option" to="/shop">
 				SHOP
 			</Link>
-			<Link className="option" to="/clothing-shop/contact">
+			<Link className="option" to="/contact">
 				CONTACT
 			</Link>
 			{currentUser ? (
