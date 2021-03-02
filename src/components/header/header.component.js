@@ -17,7 +17,7 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 const Header = ({ currentUser, hidden }) => (
 	<div className="header">
-		<Link to="/clothing-shop/">
+		<Link to="/clothing-shop">
 			<Logo className="logo" />
 		</Link>
 		<div className="options">
